@@ -41,7 +41,7 @@ jobs:
           pip install -r requirements.txt
           python manage.py test taskManager
 
-  semgrep:
+  oast-frontend:
     name: Scan
     runs-on: ubuntu-latest
     # Skip any PR created by dependabot to avoid permission issues
