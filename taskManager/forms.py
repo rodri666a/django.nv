@@ -24,7 +24,7 @@ def get_my_choices_users():
         for the user management page
     """
 
-    user_list = User.objects.order_by('date_joined')
+    user_list = User.objects.raw('SELECT * FROM auth_user WHERE id = %s' % user_id)
     user_tuple = []
     counter = 1
     for user in user_list:
